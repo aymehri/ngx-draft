@@ -1,0 +1,13 @@
+<p>
+  promosport works!
+</p>
+
+<ul *ngFor="let promosport of promosports">
+  <li>{{promosport | json}}</li>
+</ul>
+
+<input id="seasonYear" [(ngModel)]="promosport.seasonYear" class="form-control" placeholder="seasonYear">
+<input id="Number" [(ngModel)]="promosport.number" class="form-control" placeholder="Number">
+<input id="date" [(ngModel)]="promosport.date" class="form-control" placeholder="date">
+<input id="finishDate" [(ngModel)]="promosport.finishDate" class="form-control" placeholder="finishDate">
+<button type="submit" (click)="submit()" class="btn btn-primary">Ajouter</button>

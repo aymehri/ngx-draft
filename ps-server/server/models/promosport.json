@@ -1,0 +1,32 @@
+{
+  "name": "promosport",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "seasonYear": {
+      "type": "number"
+    },
+    "number": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date"
+    },
+    "finishDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "matches": {
+      "type": "hasMany",
+      "model": "match",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

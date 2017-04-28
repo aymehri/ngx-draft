@@ -1,0 +1,32 @@
+{
+  "ids": {
+    "team": 3,
+    "match": 6,
+    "promosport": 3,
+    "pronostic": 2,
+    "pronosticMatch": 2
+  },
+  "models": {
+    "team": {
+      "1": "{\"name\":\"team1\",\"id\":1}",
+      "2": "{\"name\":\"team2\",\"id\":2}"
+    },
+    "match": {
+      "1": "{\"id\":1,\"x1\":false,\"xx\":true,\"x2\":false,\"localTeamId\":1,\"visitorTeamId\":1,\"promosportId\":1}",
+      "2": "{\"x1\":true,\"xx\":false,\"x2\":false,\"localTeamId\":1,\"visitorTeamId\":2,\"promosportId\":1,\"id\":2}",
+      "3": "{\"id\":3,\"x1\":false,\"xx\":true,\"x2\":false,\"localTeamId\":1,\"visitorTeamId\":1,\"promosportId\":1}",
+      "4": "{\"x1\":false,\"xx\":false,\"x2\":true,\"localTeamId\":1,\"visitorTeamId\":2,\"promosportId\":1,\"id\":4}",
+      "5": "{\"x1\":false,\"xx\":false,\"x2\":true,\"localTeamId\":1,\"visitorTeamId\":2,\"promosportId\":2,\"id\":5}"
+    },
+    "promosport": {
+      "1": "{\"seasonYear\":2017,\"number\":1,\"date\":\"2017-04-18T09:23:40.531Z\",\"finishDate\":\"2017-04-18T09:23:40.531Z\",\"id\":1}",
+      "2": "{\"seasonYear\":2017,\"number\":2,\"date\":\"2017-04-22T16:16:51.861Z\",\"finishDate\":\"2017-04-22T16:16:51.861Z\",\"id\":2}"
+    },
+    "pronostic": {
+      "1": "{\"saveDate\":\"2017-04-18T09:23:40.604Z\",\"promosportId\":1,\"id\":1}"
+    },
+    "pronosticMatch": {
+      "1": "{\"x1\":false,\"xx\":false,\"x2\":false,\"pronosticId\":1,\"matchId\":1,\"id\":1}"
+    }
+  }
+}

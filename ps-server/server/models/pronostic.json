@@ -1,0 +1,29 @@
+{
+  "name": "pronostic",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "saveDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "promosport": {
+      "type": "belongsTo",
+      "model": "promosport",
+      "foreignKey": ""
+    },
+    "pronosticMatches": {
+      "type": "hasMany",
+      "model": "pronosticMatch",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

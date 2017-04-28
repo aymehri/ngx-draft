@@ -1,0 +1,8 @@
+{
+  "psDB": {
+    "name": "psDB",
+    "localStorage": "",
+    "file": "db.json",
+    "connector": "memory"
+  }
+}

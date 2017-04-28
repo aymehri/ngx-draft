@@ -1,0 +1,7 @@
+<p>
+  results works!
+</p>
+<ul *ngFor="let ps of promosports">
+  <li>{{ps | json}}</li>
+  <a [routerLink]="[ps.id]">{{ps.number}}</a>
+</ul>

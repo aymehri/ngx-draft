@@ -1,0 +1,37 @@
+{
+  "name": "pronosticMatch",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "x1": {
+      "type": "boolean",
+      "default": false
+    },
+    "xx": {
+      "type": "boolean",
+      "default": false
+    },
+    "x2": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pronostic": {
+      "type": "belongsTo",
+      "model": "pronostic",
+      "foreignKey": ""
+    },
+    "match": {
+      "type": "belongsTo",
+      "model": "match",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

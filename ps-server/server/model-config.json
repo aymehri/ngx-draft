@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "team": {
+    "dataSource": "psDB",
+    "public": true
+  },
+  "match": {
+    "dataSource": "psDB",
+    "public": true
+  },
+  "promosport": {
+    "dataSource": "psDB",
+    "public": true
+  },
+  "pronostic": {
+    "dataSource": "psDB",
+    "public": true
+  },
+  "pronosticMatch": {
+    "dataSource": "psDB",
+    "public": true
+  }
+}

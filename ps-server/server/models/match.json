@@ -1,0 +1,42 @@
+{
+  "name": "match",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "x1": {
+      "type": "boolean",
+      "default": false
+    },
+    "xx": {
+      "type": "boolean",
+      "default": false
+    },
+    "x2": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "localTeam": {
+      "type": "belongsTo",
+      "model": "team",
+      "foreignKey": "localTeamId"
+    },
+    "visitorTeam": {
+      "type": "belongsTo",
+      "model": "team",
+      "foreignKey": "visitorTeamId"
+    },
+    "promosport": {
+      "type": "belongsTo",
+      "model": "promosport",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

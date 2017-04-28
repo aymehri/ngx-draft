@@ -1,0 +1,59 @@
+<h1>With Observable</h1>
+<ul *ngFor="let promosport of (promosports$ | async)">
+    <li>{{promosport | json}}</li>
+</ul>
+<div>
+    <label>Promosport Number</label>
+    <select name="promosport" (change)="selectInputChange$.next($event.target.value)">
+        <option *ngFor="let promosport of (promosports$ | async)">
+            {{promosport.number}}
+        </option>
+    </select>
+</div>
+
+<!--
+<ul *ngFor="let match of (matches$ | async)">
+    <li>{{match | json}}</li>
+</ul>
+-->
+
+<table>
+    <thead>
+        <!--
+        <tr>
+            <th>Equipe 1</th>
+            <th>Equipe 2</th>
+            <th>1</th>
+            <th>X</th>
+            <th>2</th>
+        </tr>
+        -->
+    </thead>
+    <tbody>
+        <tr *ngFor="let match of (matches$ | async)">
+            <td>{{match.localTeam.name}}</td>
+            <td>{{match.visitorTeam.name}}</td>
+            <td>
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-inverse fa-stack-1x">1</i>
+                    <i *ngIf="match.x1" class="fa fa-ban fa-stack-2x text-danger"></i>
+                </span>
+            </td>
+            <td>
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-inverse fa-stack-1x">X</i>
+                    <i *ngIf="match.xx" class="fa fa-ban fa-stack-2x text-danger"></i>
+                </span>
+            </td>
+            <td>
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-inverse fa-stack-1x">2</i>
+                    <i *ngIf="match.x2" class="fa fa-ban fa-stack-2x text-danger"></i>
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>

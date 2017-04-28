@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Teams
+  </div>
+
+  <ul *ngFor="let team of teams">
+    <li>{{team | json}}</li>
+  </ul>
+
+  <div class="panel-body">
+    <form class="form-horizontal" novalidate (ngSubmit)="submit(teamForm)" #teamForm="ngForm">
+      <fieldset>
+        <div class="form-group" [ngClass]="{'has-danger': (nameVar.touched || nameVar.dirty) && !nameVar.valid }">
+          <label class="form-control-label" for="nameId">Team Name</label>
+          <input id="nameId" type="text" placeholder="name" required minlength="3" [(ngModel)]="team.name" name="name" class="form-control"
+            #nameVar="ngModel">
+          <div class="form-control-feedback" *ngIf=" (nameVar.touched || nameVar.dirty) && nameVar.errors">
+            <div *ngIf="nameVar.errors.required">
+              Please enter a name for the team.
+            </div>
+            <div *ngIf="nameVar.errors.minlength">
+              The name must be longer than 3 characters.
+            </div>
+          </div>
+        </div>
+        <button type="submit" [disabled]="!teamForm.valid" class="btn btn-primary">Ajouter</button>
+
+      </fieldset>
+    </form>
+  </div>
+</div>

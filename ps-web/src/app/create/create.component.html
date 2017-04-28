@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <tr>
+      <th>Equipe 1</th>
+      <th>1</th>
+      <th>X</th>
+      <th>2</th>
+      <th>Equipe 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let match of matchs">
+      <td>{{match.localTeam}}</td>
+      <td><input type="checkbox" [(ngModel)]="match.x1" [disabled]="disableCondition(match) && !match.x1" (ngModelChange)="refreshPrice($event)" /></td>
+      <td><input type="checkbox" [(ngModel)]="match.xx" [disabled]="disableCondition(match) && !match.xx" (ngModelChange)="refreshPrice($event)" /></td>
+      <td><input type="checkbox" [(ngModel)]="match.x2" [disabled]="disableCondition(match) && !match.x2" (ngModelChange)="refreshPrice($event)" /></td>
+      <td>{{match.visitorTeam}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<span class="fa-stack">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-inverse fa-stack-1x">1</i>
+</span>
+<span class="fa-stack">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-inverse fa-stack-1x">X</i>
+  <i class="fa fa-ban fa-stack-2x text-danger"></i>
+</span>
+<span class="fa-stack">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-inverse fa-stack-1x">2</i>
+</span>
+{{price}}
+{{filteredGrille | json}}
