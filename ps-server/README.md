@@ -1,13 +1,13 @@
 ```
-     _-----_     
+     _-----_
     |       |    ╭──────────────────────────╮
     |--(o)--|    │  Let's create a LoopBack │
    `---------´   │       application!       │
     ( _´U`_ )    ╰──────────────────────────╯
     /___A___\   /
-     |  ~  |     
-   __'.___.'__   
- ´   `  |° ´ Y ` 
+     |  ~  |
+   __'.___.'__
+ ´   `  |° ´ Y `
 
 ? What's the name of your application? ps-server
 ? Enter name of the directory to contain the project: ps-server
@@ -276,3 +276,76 @@ $ lb relation
 ```
 [api/pronostics?filter[include]=promosport](http://localhost:3000/api/pronostics?filter[include]=promosport)
 [api/pronostics?filter[include]=pronosticMatches&filter[include]=promosport](http://localhost:3000/api/pronostics?filter[include]=pronosticMatches&filter[include]=promosport])
+
+
+Create Customer inherit from User
+```
+$ lb model
+? Enter the model name: customer
+? Select the data-source to attach customer to: psDB (memory)
+? Select model's base class User
+? Expose customer via the REST API? Yes
+? Custom plural form (used to build REST URL):
+? Common model or server only? server
+Let's add some customer properties now.
+
+Enter an empty property name when done.
+? Property name: name
+   invoke   loopback:property
+? Property type: string
+? Required? Yes
+? Default value[leave blank for none]:
+
+Let's add another customer property.
+Enter an empty property name when done.
+? Property name:
+```
+
+create relation between customer and pronostic
+```
+$ lb relation
+? Select the model to create the relationship from: customer
+? Relation type: has many
+? Choose a model to create a relationship with: pronostic
+? Enter the property name for the relation: pronostics
+? Optionally enter a custom foreign key:
+? Require a through model? No
+
+```
+Disable access to all users :
+```
+$ lb acl
+? Select the model to apply the ACL entry to: (all existing models)
+? Select the ACL scope: All methods and properties
+? Select the access type: All (match all types)
+? Select the role All users
+? Select the permission to apply Explicitly deny access
+```
+Allow everybody to view promosport
+```
+$ lb acl
+? Select the model to apply the ACL entry to: promosport
+? Select the ACL scope: All methods and properties
+? Select the access type: Read
+? Select the role All users
+? Select the permission to apply Explicitly grant access
+```
+allow every customer to their own info
+```
+$ lb acl
+? Select the model to apply the ACL entry to: customer
+? Select the ACL scope: All methods and properties
+? Select the access type: All (match all types)
+? Select the role The user owning the object
+? Select the permission to apply Explicitly grant access
+```
+allow administrators to do and see all
+```
+? Select the model to apply the ACL entry to: (all existing models)
+? Select the ACL scope: All methods and properties
+? Select the access type: All (match all types)
+? Select the role other
+? Enter the role name: admin
+? Select the permission to apply Explicitly grant access
+```
+

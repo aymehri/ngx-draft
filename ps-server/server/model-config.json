@@ -32,5 +32,29 @@
   "pronosticMatch": {
     "dataSource": "psDB",
     "public": true
+  },
+  "customer": {
+    "dataSource": "psDB",
+    "public": true
+  },
+  "User": {
+    "dataSource": "psDB",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "psDB",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "psDB",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "psDB",
+    "public": true
+  },
+  "Role": {
+    "dataSource": "psDB",
+    "public": true
   }
 }
