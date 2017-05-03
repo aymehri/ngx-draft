@@ -53,6 +53,9 @@ import { MatchApi } from './services/custom/Match';
 import { PromosportApi } from './services/custom/Promosport';
 import { PronosticApi } from './services/custom/Pronostic';
 import { PronosticMatchApi } from './services/custom/PronosticMatch';
+import { CustomerApi } from './services/custom/Customer';
+import { RoleMappingApi } from './services/custom/RoleMapping';
+import { RoleApi } from './services/custom/Role';
 /**
 * @module SDKBrowserModule
 * @description
@@ -89,6 +92,9 @@ export class SDKBrowserModule {
         PromosportApi,
         PronosticApi,
         PronosticMatchApi,
+        CustomerApi,
+        RoleMappingApi,
+        RoleApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

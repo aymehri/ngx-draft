@@ -5,6 +5,9 @@ import { Match } from '../../models/Match';
 import { Promosport } from '../../models/Promosport';
 import { Pronostic } from '../../models/Pronostic';
 import { PronosticMatch } from '../../models/PronosticMatch';
+import { Customer } from '../../models/Customer';
+import { RoleMapping } from '../../models/RoleMapping';
+import { Role } from '../../models/Role';
 
 export interface Models { [name: string]: any }
 
@@ -17,6 +20,9 @@ export class SDKModels {
     Promosport: Promosport,
     Pronostic: Pronostic,
     PronosticMatch: PronosticMatch,
+    Customer: Customer,
+    RoleMapping: RoleMapping,
+    Role: Role,
     
   };
 

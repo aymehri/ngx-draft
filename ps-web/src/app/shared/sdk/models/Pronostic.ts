@@ -9,6 +9,7 @@ export interface PronosticInterface {
   "saveDate": Date;
   "id"?: number;
   "promosportId"?: number;
+  "customerId"?: number;
   promosport?: Promosport;
   pronosticMatches?: PronosticMatch[];
 }
@@ -17,6 +18,7 @@ export class Pronostic implements PronosticInterface {
   "saveDate": Date;
   "id": number;
   "promosportId": number;
+  "customerId": number;
   promosport: Promosport;
   pronosticMatches: PronosticMatch[];
   constructor(data?: PronosticInterface) {
@@ -60,6 +62,10 @@ export class Pronostic implements PronosticInterface {
         },
         "promosportId": {
           name: 'promosportId',
+          type: 'number'
+        },
+        "customerId": {
+          name: 'customerId',
           type: 'number'
         },
       },
