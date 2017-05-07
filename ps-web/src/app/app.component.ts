@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  online$: Observable<boolean>;
+
   title = 'pm works!';
+
+  constructor() {
+  this.online$ = Observable.merge(
+    Observable.of(navigator.onLine),
+    Observable.fromEvent(window, 'online').map(() => true),
+    Observable.fromEvent(window, 'offline').map(() => false)
+  )
+}
 }

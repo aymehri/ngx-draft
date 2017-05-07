@@ -21,9 +21,12 @@
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/register']">Register</a>
             </li>
+			<li class="nav-item">
+				<p>{{online$ | async}}</p>
+			</li>
         </ul>
         <span class="navbar-text">
-      Profile
+
     </span>
     </div>
 </nav>
