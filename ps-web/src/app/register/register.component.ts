@@ -1,6 +1,7 @@
-import { Customer } from './../shared/sdk/models/Customer';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, FormArray } from '@angular/forms';
+import { Customer } from './../shared/sdk/models/Customer';
+import { CustomerApi } from './../shared/sdk/services/custom/Customer';
 
 @Component({
   selector: 'pm-register',
@@ -16,12 +17,13 @@ export class RegisterComponent implements OnInit {
     pattern: 'Please enter a valid email address.'
   };
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private customerApi: CustomerApi) { }
 
   ngOnInit() {
     this.registerForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       username: ['', [Validators.required, Validators.maxLength(50)]],
+      password: ['', [Validators.required, Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+')]]
     });
 
@@ -41,8 +43,14 @@ export class RegisterComponent implements OnInit {
   save(): void {
     console.log('Saved: ' + JSON.stringify(this.registerForm.value));
     const customer: Customer = new Customer();
-    let p = Object.assign({}, customer, this.registerForm.value);
-    console.log(p);
+    const p = Object.assign({}, customer, this.registerForm.value);
+
+    this.customerApi.create(p).subscribe(
+      (response: Customer) => {
+        this.registerForm.reset();
+      },
+      error => console.log(error)
+    );
   }
 
 
