@@ -1,3 +1,37 @@
-<p>
-  login works!
-</p>
+<form class="form-horizontal" novalidate (ngSubmit)="login()" [formGroup]="loginForm">
+  <fieldset>
+
+    <div class="form-group" [ngClass]="{'has-danger': (loginForm.get('username').touched || loginForm.get('username').dirty) && !loginForm.get('username').valid }">
+      <label class="col-md-2 control-label" for="usernameId">User Name</label>
+      <div class="col-md-8">
+        <input class="form-control" id="usernameId" type="text" placeholder="User Name (required)" formControlName="username" />
+        <span class="text-muted" *ngIf="(loginForm.get('username').touched || loginForm.get('username').dirty) && loginForm.get('username').errors">
+        <span *ngIf="loginForm.get('username').errors.required">Please enter your username.</span>
+        <span *ngIf="loginForm.controls.username.errors.maxlength">The last name must be less than 50 characters.</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-danger': (loginForm.get('password').touched || loginForm.get('password').dirty) && !loginForm.get('password').valid }">
+      <label class="col-md-2 control-label" for="passwordId">Password</label>
+      <div class="col-md-8">
+        <input class="form-control" id="passwordId" type="text" placeholder="Password (required)" formControlName="password" />
+        <span class="text-muted" *ngIf="(loginForm.get('password').touched || loginForm.get('password').dirty) && loginForm.get('password').errors">
+        <span *ngIf="loginForm.get('password').errors.required">Please enter your password.</span>
+        <span *ngIf="loginForm.controls.password.errors.maxlength">The password must be less than 50 characters.</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-2">
+        <span>
+          <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Save</button>
+        </span>
+        <span>
+          <button class="btn btn-default" type="button" (click)="loginForm.reset()">Reset</button>
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</form>
