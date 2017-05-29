@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private customerrApi: CustomerApi,
+              private customerApi: CustomerApi,
               private auth: LoopBackAuth) { }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   login(): void{
     const login = Object.assign({}, this.loginForm.value);
-    this.customerrApi.login(login).subscribe(
+    this.customerApi.login(login).subscribe(
       (token: SDKToken) => {
         console.log('Login Success');
         console.log(token);
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   }
 
   logOut(): void{
-    this.customerrApi.logout().subscribe(
+    this.customerApi.logout().subscribe(
       () => {
         console.log('Logout Success');
       },
