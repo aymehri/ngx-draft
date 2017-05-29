@@ -1,3 +1,4 @@
+import { AuthGuard } from './shared/security/auth-guard.service';
 import { SDKBrowserModule } from './shared/sdk/index';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,7 @@ import { AppComponent } from './app.component';
     SDKBrowserModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
