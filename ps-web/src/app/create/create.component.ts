@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
+import { PromosportApi } from './../shared/sdk/services/custom/Promosport';
+import { Promosport } from './../shared/sdk/models/Promosport';
+import { LoopBackFilter } from './../shared/sdk/models/BaseModels';
+
 import { Match } from './models/match';
 import { Grille } from './models/grille';
+
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/range';
@@ -13,15 +19,25 @@ import 'rxjs/add/operator/count';
 })
 export class CreateComponent implements OnInit {
 
+  public promosport: Promosport;
+
   matchs: Array<Match>;
   grilles: Array<Grille>;
   filteredGrille: Grille;
 
   price = 0;
 
-  constructor() { }
+  constructor(private promosportApi: PromosportApi) { }
 
   ngOnInit() {
+    let filter : LoopBackFilter ={
+      order : 'finishDate DESC',
+      include:  { matches: ['localTeam', 'visitorTeam']}
+    };
+    this.promosportApi.findOne(filter).subscribe(
+      (result: Promosport) => this.promosport = result
+    );
+
     this.matchs = [
       { localTeam: 'Taraji', visitorTeam: 'Club', x1: false, xx: false, x2: false },
       { localTeam: 'Taraji2', visitorTeam: 'Club', x1: false, xx: false, x2: false },
@@ -101,7 +117,7 @@ export class CreateComponent implements OnInit {
     ];
   }
 
-  testBoutton() {
+  refreshPrice(e) {
     for (const match of this.matchs) {
       let countChecked = 0;
       if (match.x1) {
@@ -127,10 +143,6 @@ export class CreateComponent implements OnInit {
       this.price = 0;
     }
     console.log(this.filteredGrille);
-  }
-
-  refreshPrice(e) {
-    this.testBoutton();
   }
 
   disableCondition(match): boolean {

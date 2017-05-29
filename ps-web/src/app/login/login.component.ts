@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private customerApi: CustomerApi,
-              private auth: LoopBackAuth) { }
+              private customerApi: CustomerApi) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -36,11 +35,6 @@ export class LoginComponent implements OnInit {
       (err: any) => {
         console.log('Login Failed');
       });
-      console.log(this.auth.getAccessTokenId());
-  }
-
-  getToken(){
-    console.log(this.auth.getAccessTokenId());
   }
 
   logOut(): void{
