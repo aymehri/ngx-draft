@@ -1,6 +1,10 @@
 import { Observable } from 'rxjs/Observable';
 import { Component } from '@angular/core';
 
+
+let navigator: any;
+let window: any;
+
 @Component({
   selector: 'pm-root',
   templateUrl: './app.component.html',
