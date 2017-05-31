@@ -17,6 +17,9 @@
     },
     "finishDate": {
       "type": "date"
+    },
+    "online": {
+      "type": "boolean"
     }
   },
   "validations": [],

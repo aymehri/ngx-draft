@@ -32,7 +32,8 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
     let filter : LoopBackFilter ={
       order : 'finishDate DESC',
-      include:  { matches: ['localTeam', 'visitorTeam']}
+      include:  { matches: ['localTeam', 'visitorTeam']},
+      where : { online : true }
     };
     this.promosportApi.findOne(filter).subscribe(
       (result: Promosport) => this.promosport = result

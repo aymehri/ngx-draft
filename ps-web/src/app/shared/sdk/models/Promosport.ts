@@ -9,6 +9,7 @@ export interface PromosportInterface {
   "number"?: number;
   "date"?: Date;
   "finishDate"?: Date;
+  "online"?: boolean;
   "id"?: number;
   matches?: Match[];
 }
@@ -18,6 +19,7 @@ export class Promosport implements PromosportInterface {
   "number": number;
   "date": Date;
   "finishDate": Date;
+  "online": boolean;
   "id": number;
   matches: Match[];
   constructor(data?: PromosportInterface) {
@@ -66,6 +68,10 @@ export class Promosport implements PromosportInterface {
         "finishDate": {
           name: 'finishDate',
           type: 'Date'
+        },
+        "online": {
+          name: 'online',
+          type: 'boolean'
         },
         "id": {
           name: 'id',

@@ -60,8 +60,8 @@
       "5": "{\"x1\":false,\"xx\":false,\"x2\":true,\"localTeamId\":1,\"visitorTeamId\":2,\"promosportId\":2,\"id\":5}"
     },
     "promosport": {
-      "1": "{\"seasonYear\":2017,\"number\":1,\"date\":\"2017-04-18T09:23:40.531Z\",\"finishDate\":\"2017-04-18T09:23:40.531Z\",\"id\":1}",
-      "2": "{\"seasonYear\":2017,\"number\":2,\"date\":\"2017-04-22T16:16:51.861Z\",\"finishDate\":\"2017-04-22T16:16:51.861Z\",\"id\":2}"
+      "1": "{\"seasonYear\":2017,\"number\":1,\"date\":\"2017-04-18T09:23:40.531Z\",\"finishDate\":\"2017-04-18T09:23:40.531Z\",\"online\":true,\"id\":1}",
+      "2": "{\"seasonYear\":2017,\"number\":2,\"date\":\"2017-04-22T16:16:51.861Z\",\"finishDate\":\"2017-04-22T16:16:51.861Z\",\"online\":false,\"id\":2}"
     },
     "pronostic": {
       "1": "{\"saveDate\":\"2017-04-18T09:23:40.604Z\",\"promosportId\":1,\"id\":1}"
@@ -77,7 +77,7 @@
       "5": "{\"name\":\"test2\",\"username\":\"test2\",\"password\":\"$2a$10$t6DUPCWt9aO3YknBNNqgm.GRjxEMejxG6TQcIqxdrNb9Yg17TI10y\",\"email\":\"test2@gmail.com\",\"id\":5}"
     },
     "AccessToken": {
-      "ptW9uNhZTbXM6QTOqzPqSgGVjXclQ3X8VUWya4nRDah0mwM0j6ukKnD6EGNQxhFi": "{\"id\":\"ptW9uNhZTbXM6QTOqzPqSgGVjXclQ3X8VUWya4nRDah0mwM0j6ukKnD6EGNQxhFi\",\"ttl\":1209600,\"created\":\"2017-05-09T16:19:24.553Z\",\"userId\":1}",
+      "ptW9uNhZTbXM6QTOqzPqSgGVjXclQ3X8VUWya4nRDah0mwM0j6ukKnD6EGNQxhFi": "{\"id\":\"ptW9uNhZTbXM6QTOqzPqSgGVjXclQ3X8VUWya4nRDah0mwM0j6ukKnD6EGNQxhFi\",\"ttl\":1209600,\"created\":\"2017-05-09T16:19:24.553Z\",\"userId\":1}"
     },
     "ACL": {},
     "RoleMapping": {
