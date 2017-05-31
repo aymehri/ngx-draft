@@ -1,4 +1,25 @@
-{{promosport | json}}
+<!--{{promosport | json}}-->
+<table>
+  <thead>
+    <tr>
+      <th>Equipe 1</th>
+      <th>1</th>
+      <th>X</th>
+      <th>2</th>
+      <th>Equipe 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let match of promosport.matches">
+      <td>{{match.localTeam.name}}</td>
+      <td><input type="checkbox" /></td>
+      <td><input type="checkbox" /></td>
+      <td><input type="checkbox" /></td>
+      <td>{{match.visitorTeam.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
 <table>
   <thead>
     <tr>

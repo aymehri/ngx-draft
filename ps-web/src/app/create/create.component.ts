@@ -19,7 +19,7 @@ import 'rxjs/add/operator/count';
 })
 export class CreateComponent implements OnInit {
 
-  public promosport: Promosport;
+  public promosport: Promosport = new Promosport();
 
   matchs: Array<Match>;
   grilles: Array<Grille>;

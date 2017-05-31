@@ -3,9 +3,22 @@
     Teams
   </div>
 
-  <ul *ngFor="let team of teams">
-    <li>{{team | json}}</li>
-  </ul>
+<table>
+  <thead>
+    <tr>
+      <th>Equipe1</th>
+      <th>Equipe2</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams">
+      <td>{{team.id}}</td>
+      <td>{{team.name}}</td>
+      <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+    </tr>
+  </tbody>
+</table>
 
   <div class="panel-body">
     <form class="form-horizontal" novalidate (ngSubmit)="submit(teamForm)" #teamForm="ngForm">
