@@ -19,20 +19,20 @@
 
 <table>
     <thead>
-        <!--
         <tr>
             <th>Equipe 1</th>
             <th>Equipe 2</th>
-            <th>1</th>
-            <th>X</th>
-            <th>2</th>
+
         </tr>
-        -->
     </thead>
     <tbody>
-        <tr *ngFor="let match of (matches$ | async)">
-            <td>{{match.localTeam.name}}</td>
-            <td>{{match.visitorTeam.name}}</td>
+        <tr *ngFor="let match of matches">
+            <td>
+              <input list="teams" type="text" [(ngModel)]="match.localTeam.name">
+            </td>
+            <td>
+              <input list="teams" type="text" [(ngModel)]="match.visitorTeam.name">
+            </td>
             <td>
                 <span class="fa-stack">
                     <i class="fa fa-circle fa-stack-2x"></i>
@@ -57,3 +57,8 @@
         </tr>
     </tbody>
 </table>
+
+
+<datalist id="teams">
+    <option *ngFor="let team of teams">{{team.name}}</option>
+</datalist>

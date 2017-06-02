@@ -31,7 +31,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   checkLoggedIn(url: string): Observable<boolean> {
     return this.customerApi.getCurrent()
-      .map(result => { return true })
+      .map(result => true )
       .catch(error => {
         this.router.navigate(['/login']);
         return Observable.of(false);
